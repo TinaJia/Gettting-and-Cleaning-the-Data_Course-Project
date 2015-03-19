@@ -6,10 +6,10 @@ The purpose of this project is to demonstrate your ability to collect, work with
 
 You will be required to submit 
 
-* a tidy data set as described below
-* a link to a Github repository with your script for performing the analysis
-* a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. 
-* You should also include a README.md in the repo with your scripts. 
+1. a tidy data set as described below
+2. a link to a Github repository with your script for performing the analysis
+3. a code book that describes the variables, the data, and any transformations or work that you performed to clean up the data called CodeBook.md. 
+4. You should also include a README.md in the repo with your scripts. 
 
 This repo explains how all of the scripts work and how they are connected. 
 
@@ -23,11 +23,11 @@ Here are the data for the project:
 
 You should create one R script called run_analysis.R that does the following. 
 
-*    Merges the training and the test sets to create one data set.
-*    Extracts only the measurements on the mean and standard deviation for each measurement. 
-*    Uses descriptive activity names to name the activities in the data set
-*    Appropriately labels the data set with descriptive variable names. 
-*    From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+1. Merges the training and the test sets to create one data set.
+2. Extracts only the measurements on the mean and standard deviation for each measurement. 
+3. Uses descriptive activity names to name the activities in the data set
+4. Appropriately labels the data set with descriptive variable names. 
+5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
 ## What you can find in this repository
@@ -40,18 +40,10 @@ You should create one R script called run_analysis.R that does the following.
 
 
 ## How to generate tidy dataset from this repository
-* fork and clone repository from "https://github.com/TinaJia/Gettting-and-Cleaning-the-Data_Course-Project.git"
-* run "run_analysis.R" (please set your own working directory, use "setwd()")
+1. fork and clone repository from "https://github.com/TinaJia/Gettting-and-Cleaning-the-Data_Course-Project.git"
+2. run "run_analysis.R" (please set your own working directory, use "setwd()")
 
-## Steps of getting and cleaning the data to get the tidy dataset in "run_analysis.R"
-* download the compressed raw data from [link to raw data](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip), unzip the raw data in the working directory
-* check the lists of files in the data directory
-* read the data from the data directory (use "read.table()")
-* Merges the training and the test sets to create one data set.
-** The data directory contains datasets, subjects ID, activity type, and measurements for both testing group and training group separately.
-** merge subject ID, activity type, and measurements for both testing and training group (use "cbind()")
-** merge testing and traning data sets.
-* Extracts only the measurements on the mean and standard deviation for each measurement. 
+
 
  
 

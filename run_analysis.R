@@ -55,31 +55,30 @@ str(SelectedData)
 ##################################################################
 ## 3. Uses descriptive activity names to name the activities in the data set
 activity_label <- read.table("./Gettting-and-Cleaning-the-Data_Course-Project/UCI HAR Dataset/activity_labels.txt")
-MergedData <- mutate(MergedData, activityName = activity_label$V2[MergedData$activity])
+MergedData1 <- mutate(MergedData, activityName = activity_label$V2[MergedData$activity])
 
 
 ##################################################################
 
 # 4. Appropriately labels the data set with descriptive variable names. 
 
-names(MergedData)<-gsub("Acc","Acceleration", names(MergedData)) 
-names(MergedData)<-gsub("Gyro","Gyroscope", names(MergedData)) 
-names(MergedData)<-gsub("Mag","Magnitude", names(MergedData)) 
-names(MergedData)<-gsub("^t","Time", names(MergedData)) 
-names(MergedData)<-gsub("^f","Frequency", names(MergedData)) 
+names(MergedData1)<-gsub("Acc","Acceleration", names(MergedData1)) 
+names(MergedData1)<-gsub("Gyro","Gyroscope", names(MergedData1)) 
+names(MergedData1)<-gsub("Mag","Magnitude", names(MergedData1)) 
+names(MergedData1)<-gsub("^t","Time", names(MergedData1)) 
+names(MergedData1)<-gsub("^f","Frequency", names(MergedData1)) 
 
 
 
 # 5. From the data set in step 4, creates a second, independent tidy data set 
 #    with the average of each variable for each activity and each subject.
 
-TidyData <- ddply(MergedData, .(SubjectID, activity), function(x) colMeans(x[, 1:(length(MergedData)-1)]))
+TidyData <- ddply(MergedData1, .(SubjectID, activity), function(x) colMeans(x[, 1:(length(MergedData1)-1)]))
 write.table(TidyData, file = "tidydata.txt",row.name=FALSE)
 
 
 # Alternatively
 # Data<-aggregate(. ~SubjectID + activity, MergedData, mean)
 # Data<-Data[order(Data$SubjectID,Data$activity),]
-library(knitr)
-knit2html("codebook.Rmd")
+
 

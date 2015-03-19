@@ -31,7 +31,7 @@ You should create one R script called run_analysis.R that does the following.
 
 
 ## What you can find in this repository
-* "README.md"
+* bullet 1 "README.md"
 * "dataset.zip": compressed raw data
 * UCI HAR Dataset: the dataset used in this project
 * "CodeBook.md": a code book for the variables, the data, and any transformation or work to clean up the data

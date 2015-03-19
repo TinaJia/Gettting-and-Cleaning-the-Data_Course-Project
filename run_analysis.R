@@ -2,7 +2,8 @@
 library(plyr)
 # set the working directory
 getwd()
-setwd("C:/Users/User/Dropbox/Data Science/Jonhs Hopkins Courses/R coding practice _Ying/Getting and Cleaning data")
+# please set your working directory yourself
+# setwd("C:/Users/User/Dropbox/Data Science/Jonhs Hopkins Courses/R coding practice _Ying/Getting and Cleaning data")
 
 if(!file.exists("Gettting-and-Cleaning-the-Data_Course-Project")){
         dir.create("Gettting-and-Cleaning-the-Data_Course-Project")
@@ -68,11 +69,9 @@ names(MergedData1)<-gsub("Mag","Magnitude", names(MergedData1))
 names(MergedData1)<-gsub("^t","Time", names(MergedData1)) 
 names(MergedData1)<-gsub("^f","Frequency", names(MergedData1)) 
 
-
-
+##################################################################
 # 5. From the data set in step 4, creates a second, independent tidy data set 
 #    with the average of each variable for each activity and each subject.
-
 TidyData <- ddply(MergedData1, .(SubjectID, activity), function(x) colMeans(x[, 1:(length(MergedData1)-1)]))
 write.table(TidyData, file = "tidydata.txt",row.name=FALSE)
 
